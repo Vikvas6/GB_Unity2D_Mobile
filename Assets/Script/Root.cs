@@ -1,4 +1,5 @@
-﻿using Profile;
+﻿using Game.Analytic;
+using Profile;
 using UnityEngine;
 
 internal sealed class Root : MonoBehaviour
@@ -11,7 +12,7 @@ internal sealed class Root : MonoBehaviour
 
     private void Awake()
     {
-        ProfilePlayer profilePlayer = new ProfilePlayer(_speedCar);
+        ProfilePlayer profilePlayer = new ProfilePlayer(_speedCar, new UnityAnalyticTools());
         profilePlayer.CurrentState.Value = GameState.Start;
         _mainController = new MainController(_placeForUi, profilePlayer);
     }
