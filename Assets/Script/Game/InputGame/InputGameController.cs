@@ -13,12 +13,12 @@ namespace Game.InputLogic
         
         public InputGameController(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove, Car car)
         {
-            // _view = LoadView(_viewPathEndless);
-            // _view.Init(leftMove, rightMove, car.Speed);
+            _view = LoadView(_viewPathEndless);
+            _view.Init(leftMove, rightMove, car.Speed);
             // _view = LoadView(_viewPathSwipe);
             // _view.Init(leftMove, rightMove, car.Speed);
-            _view = LoadView(_viewPathTape);
-            _view.Init(leftMove, rightMove, car.Speed*10);
+            // _view = LoadView(_viewPathTape);
+            // _view.Init(leftMove, rightMove, car.Speed);
         }
 
         private BaseInputView LoadView(ResourcePath path)

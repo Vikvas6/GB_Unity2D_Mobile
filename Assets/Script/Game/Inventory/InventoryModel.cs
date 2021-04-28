@@ -20,6 +20,16 @@ namespace Game.Inventory
             return _equippedItems ?? _stubCollection;
         }
 
+        public void EquipItems(IReadOnlyList<IItem> items)
+        {
+            if (items == null)
+            {
+                return;
+            }
+            foreach (IItem item in items)
+                EquipItem(item);
+        }
+
         public void EquipItem(IItem item)
         {
             if (_equippedItems.Contains(item)) return;

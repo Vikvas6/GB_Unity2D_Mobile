@@ -1,3 +1,5 @@
+using Tools; 
+
 namespace Game.Features
 {
     public interface IShedController
@@ -14,6 +16,6 @@ namespace Game.Features
     public interface IUpgradable
     {
         void Restore();
-        float Speed { get; set; }
+        SubscriptionProperty<float> Speed { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Profile
 {
-    internal class CurrentGameState
+    public class CurrentGameState
     {
         public GameState State
         {

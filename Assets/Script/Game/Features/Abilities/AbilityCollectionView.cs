@@ -9,8 +9,11 @@ namespace Game.Features.Abilities
     {
         #region Fields
         
-        private IReadOnlyList<IItem> _abilityItems;
+        [SerializeField] private RectTransform _itemsParent;
+        [SerializeField] private AbilityItemView _abilityItemView;
 
+        private IReadOnlyList<IItem> _abilityItems;
+        
         #endregion
 
         #region Methods
@@ -33,7 +36,11 @@ namespace Game.Features.Abilities
 
         public void Show()
         {
-            // красиво показать какой-то объект
+            foreach (IItem item in _abilityItems)
+            {
+                AbilityItemView itemView = Instantiate(_abilityItemView, _itemsParent);
+                itemView.SetupItem(item, OnUseRequested);
+            }
         }
 
         public void Hide()

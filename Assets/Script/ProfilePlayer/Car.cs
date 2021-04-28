@@ -1,4 +1,5 @@
 ﻿using Game.Features;
+using Tools;
 
 
 namespace Profile
@@ -7,7 +8,7 @@ namespace Profile
     {
         #region Properties
       
-        public float Speed { get; set; }
+        public SubscriptionProperty<float> Speed {get; set;} = new SubscriptionProperty<float>();
    
         #endregion
         
@@ -23,6 +24,7 @@ namespace Profile
         public Car(float speed)
         {
             _defaultSpeed = speed;
+            Speed.Value = speed;
             Restore();
         }
 
@@ -33,7 +35,7 @@ namespace Profile
 
         public void Restore()
         {
-            Speed = _defaultSpeed;
+            Speed.Value = _defaultSpeed;
         }
 
         #endregion

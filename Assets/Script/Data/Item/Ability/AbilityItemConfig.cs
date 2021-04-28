@@ -17,5 +17,6 @@ namespace Game.Item
     {
         None,
         Gun,
+        SpeedUp
     }
 }

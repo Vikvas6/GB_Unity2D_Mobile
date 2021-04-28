@@ -9,6 +9,9 @@ namespace Game.Inventory
     {
         #region Fields
         
+        [SerializeField] private RectTransform _itemsParent;
+        [SerializeField] private InventoryItemView _inventoryItemView;
+
         private List<IItem> _itemInfoCollection;
         
         #endregion
@@ -20,6 +23,11 @@ namespace Game.Inventory
 
         public void Show()
         {
+            foreach (IItem item in _itemInfoCollection)
+            {
+                InventoryItemView itemView = Instantiate(_inventoryItemView, _itemsParent);
+                itemView.SetupItem(item, OnSelected, OnDeselected);
+            }
         }
         
         public void Hide()

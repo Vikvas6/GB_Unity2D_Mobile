@@ -13,10 +13,5 @@ namespace Game.Item
     {
         public string Title { get; set; }
     }
-
-    public interface IItemsRepository
-    {
-        IReadOnlyDictionary<int, IItem> Items { get; }
-    }
 }
 

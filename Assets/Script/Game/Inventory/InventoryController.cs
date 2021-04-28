@@ -55,8 +55,8 @@ namespace Game.Inventory
         public void ShowInventory(Action hideAction)
         {
             _hideAction = hideAction;
-            _inventoryView.Show();
             _inventoryView.Display(_itemsRepository.Collection.Values.ToList());
+            _inventoryView.Show();
         }
 
         public void HideInventory()

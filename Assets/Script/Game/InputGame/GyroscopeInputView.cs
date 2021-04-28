@@ -6,7 +6,7 @@ namespace Game.InputLogic
 {
     internal sealed class GyroscopeInputView : BaseInputView
     {
-        public override void Init(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove, float speed)
+        public override void Init(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove, SubscriptionProperty<float> speed)
         {
             base.Init(leftMove, rightMove, speed);
             Input.gyro.enabled = true;
@@ -24,7 +24,7 @@ namespace Game.InputLogic
                 return;
             Quaternion quaternion = Input.gyro.attitude;
             quaternion.Normalize();
-            OnRightMove((quaternion.x + quaternion.y) * Time.deltaTime * _speed);
+            OnRightMove((quaternion.x + quaternion.y) * Time.deltaTime * _speed.Value);
         }
     } 
 }

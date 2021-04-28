@@ -2,13 +2,19 @@
 using Profile;
 using Ui;
 using UnityEngine;
+using Game.Features;
+using Game.Inventory;
+using Game.Item;
+using Tools;
+using System.Linq;
 
-internal sealed class MainController : BaseController
+public sealed class MainController : BaseController
 {
     private MainMenuController _mainMenuController;
     private GameController _gameController;
     private readonly Transform _placeForUi;
     private readonly ProfilePlayer _profilePlayer;
+    private ShedController _shedController;
     
     public MainController(Transform placeForUi, ProfilePlayer profilePlayer)
     {
@@ -25,14 +31,23 @@ internal sealed class MainController : BaseController
             case GameState.Start:
                 _mainMenuController = new MainMenuController(_placeForUi, _profilePlayer);
                 _gameController?.Dispose();
+                _shedController?.Dispose();
                 break;
             case GameState.Game:
-                _gameController = new GameController(_placeForUi, _profilePlayer);
+                _gameController = new GameController(_placeForUi, _profilePlayer, _shedController?.GetEquipedItems());
                 _mainMenuController?.Dispose();
+                _shedController?.Dispose();
+                break;
+            case GameState.Garage:
+                _shedController = new ShedController(_placeForUi, _profilePlayer);
+                _shedController.Enter();
+                _mainMenuController?.Dispose();
+                _gameController?.Dispose();
                 break;
             default:
                 _mainMenuController?.Dispose();
                 _gameController?.Dispose();
+                _shedController?.Dispose();
                 break;
         }
     }

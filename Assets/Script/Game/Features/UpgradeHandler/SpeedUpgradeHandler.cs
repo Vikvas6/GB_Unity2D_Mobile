@@ -23,7 +23,7 @@ namespace Game.Features
         
         public IUpgradable Upgrade(IUpgradable upgradable)
         {
-            upgradable.Speed = _speed;
+            upgradable.Speed.Value = _speed;
             return upgradable;
         }
 

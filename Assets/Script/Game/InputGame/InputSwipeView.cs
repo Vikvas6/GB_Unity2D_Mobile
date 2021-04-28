@@ -20,9 +20,9 @@ namespace Game.InputLogic
             if (Mathf.Abs(diff) >= _threshold)
             {
                 if(diff > 0)
-                    OnRightMove(_speed * Time.deltaTime);
+                    OnRightMove(_speed.Value * Time.deltaTime);
                 else
-                    OnLeftMove(-_speed * Time.deltaTime);
+                    OnLeftMove(-_speed.Value * Time.deltaTime);
             }
         }
 

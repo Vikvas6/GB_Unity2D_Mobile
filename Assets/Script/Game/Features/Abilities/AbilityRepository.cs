@@ -40,6 +40,8 @@ namespace Game.Features.Abilities
             {
                 case AbilityType.Gun:
                     return new GunAbility(config);
+                case AbilityType.SpeedUp:
+                    return new RailingAbility(config);
                 default:
                     return StubAbility.Default;
             }

@@ -75,8 +75,8 @@ namespace Game.Features.Abilities
 
         public void ShowAbilities()
         {
-            _abilityCollectionView.Show();
             _abilityCollectionView.Display(_inventoryModel.GetEquippedItems());
+            _abilityCollectionView.Show();
         }
 
         #endregion

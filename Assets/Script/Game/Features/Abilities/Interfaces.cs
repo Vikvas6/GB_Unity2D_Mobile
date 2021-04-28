@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Game.Item;
 using Game.UI;
 using UnityEngine;
+using Profile;
 
 
 namespace Game.Features.Abilities
@@ -15,6 +16,7 @@ namespace Game.Features.Abilities
     public interface IAbilityActivator
     {
         GameObject GetViewObject();
+        ProfilePlayer GetProfilePlayer();
     }
     
     public interface IAbilityCollectionView : IView

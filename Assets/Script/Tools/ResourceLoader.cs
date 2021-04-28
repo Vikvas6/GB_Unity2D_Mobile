@@ -2,7 +2,7 @@
 
 namespace Tools
 {
-    internal static class ResourceLoader
+    public static class ResourceLoader
     {
         public static Sprite LoadSprite(ResourcePath path)
         {
