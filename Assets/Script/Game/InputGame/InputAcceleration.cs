@@ -6,7 +6,7 @@ namespace Game.InputLogic
 {
     internal sealed class InputAcceleration : BaseInputView
     {
-        public override void Init(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove, float speed)
+        public override void Init(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove, SubscriptionProperty<float> speed)
         {
             base.Init(leftMove, rightMove, speed);
             UpdateManager.SubscribeToUpdate(Move);
@@ -26,7 +26,7 @@ namespace Game.InputLogic
             if (direction.sqrMagnitude > 1)
                 direction.Normalize();
             
-            OnRightMove(direction.sqrMagnitude / 20 * _speed);
+            OnRightMove(direction.sqrMagnitude / 20 * _speed.Value);
         }
     }
 }

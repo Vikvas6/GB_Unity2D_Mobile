@@ -6,7 +6,7 @@ namespace Game.InputLogic
 {
     internal sealed class EndlessMoveView : BaseInputView
     {
-        public override void Init(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove, float speed)
+        public override void Init(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove, SubscriptionProperty<float> speed)
         {
             base.Init(leftMove, rightMove, speed);
             UpdateManager.SubscribeToUpdate(MoveToRight);
@@ -19,7 +19,7 @@ namespace Game.InputLogic
 
         private void MoveToRight()
         {
-            OnRightMove(_speed * Time.deltaTime);
+            OnRightMove(_speed.Value * Time.deltaTime);
         }
     }
 }

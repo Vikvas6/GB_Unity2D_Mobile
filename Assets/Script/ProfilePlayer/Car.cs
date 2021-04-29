@@ -1,14 +1,44 @@
-﻿
+﻿using Game.Features;
+using Tools;
+
+
 namespace Profile
 {
-    internal sealed class Car
+    public class Car : IUpgradable
     {
-        public float Speed { get; }
+        #region Properties
+      
+        public SubscriptionProperty<float> Speed {get; set;} = new SubscriptionProperty<float>();
+   
+        #endregion
         
+        #region Fields
+      
+        private readonly float _defaultSpeed;
+   
+        #endregion
+
+        
+        #region Life cycle
+    
         public Car(float speed)
         {
-            Speed = speed;
+            _defaultSpeed = speed;
+            Speed.Value = speed;
+            Restore();
         }
+
+        #endregion
+        
+
+        #region IUpgradable
+
+        public void Restore()
+        {
+            Speed.Value = _defaultSpeed;
+        }
+
+        #endregion
     }
 }
 

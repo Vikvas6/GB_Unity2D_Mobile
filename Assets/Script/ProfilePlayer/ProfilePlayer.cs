@@ -3,7 +3,7 @@ using Game.Analytic;
 
 namespace Profile
 {
-    internal sealed class ProfilePlayer
+    public sealed class ProfilePlayer
     {
         public SubscriptionProperty<GameState> CurrentState { get; }
         public Car CurrentCar { get; }

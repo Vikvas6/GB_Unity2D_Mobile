@@ -16,7 +16,7 @@ namespace Game.InputLogic
 
         private bool _usedJoystick;
 
-        public override void Init(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove, float speed)
+        public override void Init(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove, SubscriptionProperty<float> speed)
         {
             base.Init(leftMove, rightMove, speed);
             UpdateManager.SubscribeToUpdate(Move);

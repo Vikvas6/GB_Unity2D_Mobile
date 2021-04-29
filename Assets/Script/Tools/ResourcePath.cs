@@ -1,7 +1,7 @@
 ﻿
 namespace Tools
 {
-    internal sealed class ResourcePath
+    public class ResourcePath
     {
         public string PathResource;
     } 

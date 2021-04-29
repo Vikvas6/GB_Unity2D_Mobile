@@ -2,7 +2,7 @@
 
 namespace Tools
 {
-    internal sealed class SubscriptionProperty<T> : IReadOnlySubscriptionProperty<T>
+    public sealed class SubscriptionProperty<T> : IReadOnlySubscriptionProperty<T>
     {
         private T _value;
         private Action<T> _onChangeValue;

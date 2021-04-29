@@ -2,7 +2,7 @@
 using Profile;
 using UnityEngine;
 
-internal sealed class Root : MonoBehaviour
+public sealed class Root : MonoBehaviour
 {
     [SerializeField] 
     private Transform _placeForUi;
