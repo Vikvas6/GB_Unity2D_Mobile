@@ -28,7 +28,7 @@ namespace Ui
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
-            _view.Init(StartGame, EnterShed);
+            _view.Init(StartGame, EnterShed, EnterReward);
             
             AddController(new CursorTrailController());
             
@@ -83,6 +83,12 @@ namespace Ui
         {
             _profilePlayer.CurrentState.Value = GameState.Garage;
             _profilePlayer.AnalyticTools.SendMessage("enter_shed");
+        }
+
+        private void EnterReward()
+        {
+            _profilePlayer.CurrentState.Value = GameState.Reward;
+            _profilePlayer.AnalyticTools.SendMessage("enter_reward");
         }
 
         #endregion
