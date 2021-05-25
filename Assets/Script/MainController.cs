@@ -7,6 +7,7 @@ using Game.Inventory;
 using Game.Item;
 using Tools;
 using System.Linq;
+using Game.Reward;
 
 public sealed class MainController : BaseController
 {
@@ -15,6 +16,8 @@ public sealed class MainController : BaseController
     private readonly Transform _placeForUi;
     private readonly ProfilePlayer _profilePlayer;
     private ShedController _shedController;
+    private DailyRewardController _dailyRewardController;
+    private CurrencyController _currencyController;
     
     public MainController(Transform placeForUi, ProfilePlayer profilePlayer)
     {
@@ -32,22 +35,37 @@ public sealed class MainController : BaseController
                 _mainMenuController = new MainMenuController(_placeForUi, _profilePlayer);
                 _gameController?.Dispose();
                 _shedController?.Dispose();
+                _dailyRewardController?.Dispose();
+                _currencyController?.Dispose();
                 break;
             case GameState.Game:
                 _gameController = new GameController(_placeForUi, _profilePlayer, _shedController?.GetEquipedItems());
                 _mainMenuController?.Dispose();
                 _shedController?.Dispose();
+                _dailyRewardController?.Dispose();
+                _currencyController?.Dispose();
                 break;
             case GameState.Garage:
                 _shedController = new ShedController(_placeForUi, _profilePlayer);
                 _shedController.Enter();
                 _mainMenuController?.Dispose();
                 _gameController?.Dispose();
+                _dailyRewardController?.Dispose();
+                _currencyController?.Dispose();
+                break;
+            case GameState.Reward:
+                _dailyRewardController = new DailyRewardController(_placeForUi, _profilePlayer);
+                _currencyController = new CurrencyController(_placeForUi);
+                _mainMenuController?.Dispose();
+                _gameController?.Dispose();
+                _shedController?.Dispose();
                 break;
             default:
                 _mainMenuController?.Dispose();
                 _gameController?.Dispose();
                 _shedController?.Dispose();
+                _dailyRewardController?.Dispose();
+                _currencyController?.Dispose();
                 break;
         }
     }
