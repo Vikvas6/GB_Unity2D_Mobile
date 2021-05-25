@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using Game.Item;
 using UnityEngine;
+using DG.Tweening;
 
 namespace Game.Features.Abilities
 {
@@ -26,7 +27,8 @@ namespace Game.Features.Abilities
         public void Apply(IAbilityActivator activator)
         {
             var projectile = Object.Instantiate(_config.view).GetComponent<Rigidbody2D>();
-            projectile.AddForce(activator.GetViewObject().transform.right * _config.value, ForceMode2D.Force);
+            //projectile.AddForce(activator.GetViewObject().transform.right * _config.value, ForceMode2D.Force);
+            projectile.DOMove(new Vector2(_config.value, _config.additionalValue), _config.duration);
         }
 
         #endregion
