@@ -16,6 +16,7 @@ public class MainWindowObserver : MonoBehaviour
     [SerializeField] private Button _addPowerButton;
     [SerializeField] private Button _minusPowerButton;
     [SerializeField] private Button _fightButton;
+    [SerializeField] private Button _exitButton;
  
     private int _allCountMoneyPlayer;
     private int _allCountHealthPlayer;

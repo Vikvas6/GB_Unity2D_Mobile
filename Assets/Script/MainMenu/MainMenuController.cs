@@ -28,12 +28,9 @@ namespace Ui
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
-            _view.Init(StartGame, EnterShed, EnterReward);
+            _view.Init(StartGame, EnterShed, EnterReward, StartFight);
             
             AddController(new CursorTrailController());
-            
-            /*_shedController = ConfigureShedController(placeForUi, profilePlayer);
-            _shedController.Enter();*/
         }
 
         #endregion
@@ -52,27 +49,6 @@ namespace Ui
             return objectView.GetComponent<MainMenuView>();
         }
 
-        /*private ShedController ConfigureShedController(Transform placeForUi, ProfilePlayer profilePlayer)
-        {
-            var upgradeItemsConfigCollection = ContentDataSourceLoader.LoadUpgradeItemConfigs(new ResourcePath { PathResource = "DataSource/Upgrade/UpgradeItemConfigDataSource" });
-            var upgradeItemsRepository = new UpgradeHandlersRepository(upgradeItemsConfigCollection);
-
-            var itemsRepository = new ItemsRepository(upgradeItemsConfigCollection.Select(value => value.itemConfig).ToList());
-            var inventoryModel = new InventoryModel();
-            var inventoryViewPath = new ResourcePath { PathResource = $"Prefabs/{nameof(InventoryView)}" };
-
-            var inventoryView = ResourceLoader.LoadAndInstantiateObject<InventoryView>(inventoryViewPath, placeForUi, false);
-            AddGameObjects(inventoryView.gameObject);
-
-            var inventoryController = new InventoryController(itemsRepository, inventoryModel, inventoryView);
-            AddController(inventoryController);
-
-            var shedController = new ShedController(upgradeItemsRepository, inventoryController, profilePlayer.CurrentCar);
-            AddController(shedController);
-
-            return shedController;
-        }*/
-
         private void StartGame()
         {
             _profilePlayer.CurrentState.Value = GameState.Game;
@@ -89,6 +65,12 @@ namespace Ui
         {
             _profilePlayer.CurrentState.Value = GameState.Reward;
             _profilePlayer.AnalyticTools.SendMessage("enter_reward");
+        }
+
+        private void StartFight()
+        {
+            _profilePlayer.CurrentState.Value = GameState.Fight;
+            _profilePlayer.AnalyticTools.SendMessage("start_fight");
         }
 
         #endregion
