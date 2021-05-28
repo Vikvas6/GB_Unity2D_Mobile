@@ -9,6 +9,8 @@ namespace Game.Item
         public GameObject view;
         public AbilityType type;
         public float value;
+        public float additionalValue;
+        public float duration;
 
         public int Id => itemConfig.id;
     }
