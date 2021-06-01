@@ -18,6 +18,7 @@ public sealed class MainController : BaseController
     private ShedController _shedController;
     private DailyRewardController _dailyRewardController;
     private CurrencyController _currencyController;
+    private FightWindowController _fightController;
     
     public MainController(Transform placeForUi, ProfilePlayer profilePlayer)
     {
@@ -37,6 +38,7 @@ public sealed class MainController : BaseController
                 _shedController?.Dispose();
                 _dailyRewardController?.Dispose();
                 _currencyController?.Dispose();
+                _fightController?.Dispose();
                 break;
             case GameState.Game:
                 _gameController = new GameController(_placeForUi, _profilePlayer, _shedController?.GetEquipedItems());
@@ -44,6 +46,7 @@ public sealed class MainController : BaseController
                 _shedController?.Dispose();
                 _dailyRewardController?.Dispose();
                 _currencyController?.Dispose();
+                _fightController?.Dispose();
                 break;
             case GameState.Garage:
                 _shedController = new ShedController(_placeForUi, _profilePlayer);
@@ -52,6 +55,7 @@ public sealed class MainController : BaseController
                 _gameController?.Dispose();
                 _dailyRewardController?.Dispose();
                 _currencyController?.Dispose();
+                _fightController?.Dispose();
                 break;
             case GameState.Reward:
                 _dailyRewardController = new DailyRewardController(_placeForUi, _profilePlayer);
@@ -59,6 +63,15 @@ public sealed class MainController : BaseController
                 _mainMenuController?.Dispose();
                 _gameController?.Dispose();
                 _shedController?.Dispose();
+                _fightController?.Dispose();
+                break;
+            case GameState.Fight:
+                _fightController = new FightWindowController(_placeForUi, _profilePlayer);
+                _mainMenuController?.Dispose();
+                _gameController?.Dispose();
+                _shedController?.Dispose();
+                _dailyRewardController?.Dispose();
+                _currencyController?.Dispose();
                 break;
             default:
                 _mainMenuController?.Dispose();
@@ -66,6 +79,7 @@ public sealed class MainController : BaseController
                 _shedController?.Dispose();
                 _dailyRewardController?.Dispose();
                 _currencyController?.Dispose();
+                _fightController?.Dispose();
                 break;
         }
     }
