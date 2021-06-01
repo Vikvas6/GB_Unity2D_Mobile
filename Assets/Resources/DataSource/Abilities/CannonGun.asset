@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemConfig: {fileID: 11400000, guid: f6a5f884ec4939746b1f58c5249f223f, type: 2}
   view: {fileID: 4053592497838757858, guid: d1aabbdf6bbfec145a23d3a6fd91ab12, type: 3}
+  viewReference:
+    m_AssetGUID: d1aabbdf6bbfec145a23d3a6fd91ab12
+    m_SubObjectName: 
+    m_SubObjectType: 
   type: 1
   value: 50
-  additionalValue: 26.38
+  additionalValue: -5
   duration: 4

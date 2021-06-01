@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Packed Assets
+  m_EditorClassIdentifier: 
+  m_GroupName: Packed Assets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 262eeb6aa4f0e5744a73ef1a226b3bce
+  m_SerializeEntries:
+  - m_GUID: 8fde4c9a8b9ea004c893e5c4ee8e8291
+    m_Address: Prefabs/New Button
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    m_MainAsset: {fileID: 2447560707144373869, guid: 8fde4c9a8b9ea004c893e5c4ee8e8291,
+      type: 3}
+    m_TargetAsset: {fileID: 2447560707144373869, guid: 8fde4c9a8b9ea004c893e5c4ee8e8291,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: e5f1405b90b7c9c4fa09c6f930485c4c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 62767841713a9334baee84f99c573621, type: 2}
+    - {fileID: 11400000, guid: 07c9c19bbee51e346be520ad2c24273c, type: 2}

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Game
+  m_EditorClassIdentifier: 
+  m_GroupName: Game
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e8a3e1d9acb964349a9777abbb16163e
+  m_SerializeEntries:
+  - m_GUID: d1aabbdf6bbfec145a23d3a6fd91ab12
+    m_Address: CannonBomb
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    m_MainAsset: {fileID: 4053592497838757858, guid: d1aabbdf6bbfec145a23d3a6fd91ab12,
+      type: 3}
+    m_TargetAsset: {fileID: 4053592497838757858, guid: d1aabbdf6bbfec145a23d3a6fd91ab12,
+      type: 3}
+  - m_GUID: fc5d978739b1ef048bfa075070aeba34
+    m_Address: Background
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    m_MainAsset: {fileID: 2807479611546755954, guid: fc5d978739b1ef048bfa075070aeba34,
+      type: 3}
+    m_TargetAsset: {fileID: 2807479611546755954, guid: fc5d978739b1ef048bfa075070aeba34,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: e5f1405b90b7c9c4fa09c6f930485c4c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 55b96064eab3e5440a7a99ede95bd1c5, type: 2}
+    - {fileID: 11400000, guid: bafcaeabc5428174b8c8a3cdda25be2d, type: 2}
