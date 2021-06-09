@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Game.Item
 {
@@ -7,6 +8,7 @@ namespace Game.Item
     {
         public ItemConfig itemConfig;
         public GameObject view;
+        public AssetReferenceGameObject viewReference;
         public AbilityType type;
         public float value;
         public float additionalValue;
